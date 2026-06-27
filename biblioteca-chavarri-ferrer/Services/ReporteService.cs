@@ -45,4 +45,40 @@ public class ReporteService
 
         Console.WriteLine();
     }
+
+    // ── Reporte 2: Socios con multas pendientes ──────────────────────────────
+    public void SociosConMultasPendientes()
+    {
+        Console.WriteLine("=== SOCIOS CON MULTAS PENDIENTES ===\n");
+
+        // Multa pendiente = préstamo devuelto con Multa > 0
+        var socios = _context.Socios
+            .Include(s => s.TipoSocio)
+            .Where(s => s.Prestamos.Any(p => p.Multa != null && p.Multa > 0))
+            .Select(s => new
+            {
+                s.NroSocio,
+                s.Nombre,
+                s.Apellido,
+                TipoSocio = s.TipoSocio.Nombre,
+                TotalMulta = s.Prestamos
+                    .Where(p => p.Multa != null && p.Multa > 0)
+                    .Sum(p => p.Multa ?? 0)
+            })
+            .OrderByDescending(s => s.TotalMulta)
+            .ToList();
+
+        if (!socios.Any())
+        {
+            Console.WriteLine("No hay socios con multas registradas.");
+            return;
+        }
+
+        foreach (var s in socios)
+        {
+            Console.WriteLine($"  Socio Nro {s.NroSocio} — {s.Nombre} {s.Apellido} [{s.TipoSocio}]");
+            Console.WriteLine($"  Total multas: ${s.TotalMulta:F2}");
+            Console.WriteLine();
+        }
+    }
 }
