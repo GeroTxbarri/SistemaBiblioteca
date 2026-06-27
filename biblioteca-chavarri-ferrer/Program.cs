@@ -82,6 +82,9 @@ while (!salir)
         case "3":
             new ReservaService(context).RealizarReserva();
             break;
+        case "4":
+            new SocioService(context).VerDetalleSocio();
+            break;
         case "0":
             salir = true;
             Console.WriteLine("¡Hasta luego!");
