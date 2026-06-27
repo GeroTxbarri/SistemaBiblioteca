@@ -79,6 +79,9 @@ while (!salir)
         case "2":
             new DevolucionService(context).RegistrarDevolucion();
             break;
+        case "3":
+            new ReservaService(context).RealizarReserva();
+            break;
         case "0":
             salir = true;
             Console.WriteLine("¡Hasta luego!");
