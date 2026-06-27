@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("biblioteca-chavarri-ferrer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5422efe352211e8c550fa99223cf99f624136984")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e5ecd36211fdb31cabfdf546057aee8421a5efe7")]
 [assembly: System.Reflection.AssemblyProductAttribute("biblioteca-chavarri-ferrer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("biblioteca-chavarri-ferrer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

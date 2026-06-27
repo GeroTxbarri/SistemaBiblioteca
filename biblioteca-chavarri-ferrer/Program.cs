@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using biblioteca_chavarri_ferrer.Data;
 using biblioteca_chavarri_ferrer.Models;
+using biblioteca_chavarri_ferrer.Services;
 
 // ── Inicialización de la base de datos ──────────────────────────────────────
 using var context = new BibliotecaContext();
@@ -72,6 +73,9 @@ while (!salir)
 
     switch (opcion)
     {
+        case "1":
+            new PrestamoService(context).RealizarPrestamo();
+            break;
         case "0":
             salir = true;
             Console.WriteLine("¡Hasta luego!");
