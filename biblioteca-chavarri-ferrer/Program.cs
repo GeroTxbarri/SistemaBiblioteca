@@ -85,6 +85,9 @@ while (!salir)
         case "4":
             new SocioService(context).VerDetalleSocio();
             break;
+        case "5":
+            new ReporteService(context).LibrosMasPrestados();
+            break;
         case "0":
             salir = true;
             Console.WriteLine("¡Hasta luego!");
